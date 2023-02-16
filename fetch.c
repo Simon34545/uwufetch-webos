@@ -490,18 +490,19 @@ void* get_model(void* argp) {
 			break;
 	pclose(model_fp);
 #else
-	char model_filename[4][256] = {
+	char model_filename[5][256] = {
 			"/sys/devices/virtual/dmi/id/product_version",
 			"/sys/devices/virtual/dmi/id/product_name",
 			"/sys/devices/virtual/dmi/id/board_name",
 			"getprop ro.product.vendor.marketname 2>/dev/null",
+			"nyx-cmd DeviceInfo query product_id board_type | grep -v 'session' | tr '\\n' ' ' 2>/dev/null",
 	};
 
-	char tmp_model[4][BUFFER_SIZE] = {0}; // temporary variable to store the contents of all 3 files
+	char tmp_model[5][BUFFER_SIZE] = {0}; // temporary variable to store the contents of all 3 files
 	int longest_model = 0, best_len = 0, currentlen = 0;
-	FILE* (*tocall[])(const char*, const char*) = {fopen, fopen, fopen, popen}; // open a process or a file, depending on the model_filename
-	int (*tocall_close[])(FILE*)								= {fclose, fclose, fclose, pclose};
-	for (int i = 0; i < 4; i++) {
+	FILE* (*tocall[])(const char*, const char*) = {fopen, fopen, fopen, popen, popen}; // open a process or a file, depending on the model_filename
+	int (*tocall_close[])(FILE*)								= {fclose, fclose, fclose, pclose, pclose};
+	for (int i = 0; i < 5; i++) {
 		// read file
 		model_fp = tocall[i](model_filename[i], "r");
 		if (model_fp) {
