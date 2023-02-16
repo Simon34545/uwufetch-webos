@@ -638,7 +638,7 @@ void list(char* arg) {
 				 "    "RED"RHEL "NORMAL"based:\n"
 				 "      "BLUE"fedora, "GREEN"rocky\n\n"
 				 "    "NORMAL"Other/spare distributions:\n"
-				 "      "BLUE"alpine, "PINK"femboyos, gentoo, "MAGENTA"slackware, "WHITE"solus, "GREEN"void, opensuse-leap, android, "YELLOW"gnu, guix, "BLUE"windows, "WHITE"unknown\n\n",
+				 "      "BLUE"alpine, "PINK"femboyos, gentoo, "MAGENTA"slackware, "WHITE"solus, "GREEN"void, opensuse-leap, android, "YELLOW"gnu, guix, "MAGENTA"webos, "BLUE"windows, "WHITE"unknown\n\n",
 				 arg); // Other/spare distributions colors
 	// clang-format on
 }
