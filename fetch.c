@@ -670,6 +670,8 @@ void get_info(struct flags flags, struct info* user_info) {
 	#endif
 			}
 #endif
+		} else if (access("/etc/starfish-release", F_OK)) { // webOS
+			sprintf(user_info->os_name, "webos");
 		} else // if no option before is working, the system is unknown
 			sprintf(user_info->os_name, "unknown");
 	}
