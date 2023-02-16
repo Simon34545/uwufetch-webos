@@ -4,8 +4,6 @@ LIB_FILES = fetch.c
 UWUFETCH_VERSION = $(shell git describe --tags)
 CFLAGS = -O3 -pthread -DUWUFETCH_VERSION=\"$(UWUFETCH_VERSION)\"
 CFLAGS_DEBUG = -Wall -Wextra -g -pthread -DUWUFETCH_VERSION=\"$(UWUFETCH_VERSION)\" -D__DEBUG__
-CC = cc
-AR = ar
 DESTDIR = /usr
 RELEASE_SCRIPTS = release_scripts/*.sh
 ifeq ($(OS), Windows_NT)
