@@ -289,6 +289,7 @@ void uwu_name(struct info* user_info) {
 	else STRING_TO_UWU("solus", "sOwOlus");
 	else STRING_TO_UWU("ubuntu", "Uwuntu");
 	else STRING_TO_UWU("void", "OwOid");
+	else STRING_TO_UWU("webos", "webOwOs");
 	else STRING_TO_UWU("xerolinux", "xuwulinux");
 
 	// BSD
